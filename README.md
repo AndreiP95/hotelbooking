@@ -1,5 +1,4 @@
 # hotelbooking
-Hotel Booking app
 
 Online reservation app
 
