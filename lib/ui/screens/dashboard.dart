@@ -2,7 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hotelbooking/utils/constants.dart';
 
-class HotelDashboard extends StatelessWidget {
+class HotelDashboard extends StatefulWidget {
+  @override
+  _HotelDashboardState createState() => _HotelDashboardState();
+}
+
+class _HotelDashboardState extends State<HotelDashboard> {
+  IconData myLovelyIcon = Icons.favorite_border;
+  bool favourite = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,18 +69,60 @@ class HotelDashboard extends StatelessWidget {
                   Text('Pe care l-ai vazut vreodata')
                 ],
               ),
-              Container(
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(15)),
-                child: RaisedButton(
-                  child: Text(
-                    'Vino la mine',
-                    style: TextStyle(fontSize: 12, color: Colors.white),
-                  ),
-                  color: Color(kDarkBlue),
-                  onPressed: () {
-                    print('Am fost apasat');
-                  },
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        GestureDetector(
+                          onTap: changeIcon,
+                          child: Icon(
+                            myLovelyIcon,
+                            size: 30,
+                            color: Color(kLightBlue),
+                          ),
+                        ),
+                        Icon(
+                          Icons.star,
+                          size: 32,
+                          color: Color(kYellow),
+                        ),
+                        SizedBox(
+                          width: 3,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 4),
+                          child: Text('7.5', style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold
+                          ),),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 6,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        print('Am fost apasat');
+                      },
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 9, horizontal: 12),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Color(kDarkBlue),
+                        ),
+                        child: Text(
+                          'Vino la mine',
+                          style: TextStyle(fontSize: 12, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               )
             ],
@@ -89,5 +139,12 @@ class HotelDashboard extends StatelessWidget {
       size: 20,
       color: Color(kYellow),
     );
+  }
+
+  void changeIcon() {
+    setState(() {
+      myLovelyIcon = favourite ? Icons.favorite_border : Icons.favorite;
+      favourite = !favourite;
+    });
   }
 }
