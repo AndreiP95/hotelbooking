@@ -3,6 +3,7 @@ import 'package:hotelbooking/utils/constants.dart';
 import 'package:hotelbooking/ui/widgets/base_button.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:http/http.dart' as http;
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -76,6 +77,20 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   }
 
   void register() async {
+    var queryParameters = {
+      'email': _email,
+      'nickname': 'Costel',
+      'password': _password
+    };
+
+    var uri = Uri.http(kBaseUri, kUserUri);
+    var request = await http.post(uri);
+    print(request.body);
+    print(request.statusCode);
+
+  }
+/*
+  void register() async {
     try {
       setState(() {
         showSpinner = true;
@@ -93,5 +108,5 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         showSpinner = false;
       });
     }
-  }
+  }*/
 }

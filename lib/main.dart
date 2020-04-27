@@ -1,3 +1,4 @@
+import 'package:hotelbooking/ui/screens/dashboard.dart';
 import 'package:hotelbooking/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:hotelbooking/ui/screens/welcome.dart';
@@ -15,6 +16,7 @@ class HotelBooking extends StatelessWidget {
         kRegistrationScreenRoute: (context) => RegistrationScreen(),
         kLoginScreenRoute: (context) => LoginScreen(),
         kWelcomeScreenRoute: (context) => WelcomeScreen(),
+        kHotelsDashboard: (context) => HotelDashboard()
       },
     );
   }

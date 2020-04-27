@@ -21,7 +21,7 @@ const kMessageContainerDecoration = BoxDecoration(
 const String kWelcomeScreenRoute = "WELCOME_SCREEN";
 const String kRegistrationScreenRoute = "REGISTRATION_SCREEN";
 const String kLoginScreenRoute = "LOGIN_SCREEN";
-const String kLoginHotelsList = "HOTELS_SCREEN";
+const String kHotelsDashboard = "HOTELS_DASHBOARD";
 
 
 const String registerToBackend = 'register';
@@ -45,3 +45,9 @@ const kTextFieldDecoration = InputDecoration(
 const kDarkBlue = 0xFF1761a0;
 const kLightBlue = 0xFF2884d4;
 const kYellow = 0xFFe6ba0e;
+
+
+const kBaseUri = 'www.our-fun.com:9000';
+const kUserUri = '/users';
+const kUserLoginUri = '/login';
+const kUserCsrfToken = '/csrf';
