@@ -97,6 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
       showSpinner = true;
     });
     try {
+      if(_email == null || _password == null) throw Exception('Invalid password / email');
       final user = await _auth.signInWithEmailAndPassword(
           email: _email, password: _password);
       if (user != null) {
@@ -111,7 +112,9 @@ class _LoginScreenState extends State<LoginScreen> {
         });
       }
     } catch (e) {
-      print(e);
+      setState(() {
+        showSpinner = false;
+      });
     }
   }
 }
