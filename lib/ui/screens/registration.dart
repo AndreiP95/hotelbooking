@@ -76,20 +76,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
   }
 
-  void register() async {
-    var queryParameters = {
-      'email': _email,
-      'nickname': 'Costel',
-      'password': _password
-    };
 
-    var uri = Uri.http(kBaseUri, kUserUri);
-    var request = await http.post(uri);
-    print(request.body);
-    print(request.statusCode);
-
-  }
-/*
   void register() async {
     try {
       setState(() {
@@ -101,12 +88,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         setState(() {
           showSpinner = false;
         });
-        Navigator.pushNamed(context, kLoginHotelsList);
+        Navigator.pushNamed(context, kHotelsDashboard);
       }
     } catch (e) {
       setState(() {
         showSpinner = false;
       });
     }
-  }*/
+  }
 }

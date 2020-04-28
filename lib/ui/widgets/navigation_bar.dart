@@ -10,8 +10,8 @@ class NavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: Colors.white,
       items: navigationItems(),
+      backgroundColor: Colors.white,
       unselectedIconTheme: IconThemeData(size: 25),
       selectedIconTheme: IconThemeData(size: 30),
       unselectedItemColor: Colors.grey[500],

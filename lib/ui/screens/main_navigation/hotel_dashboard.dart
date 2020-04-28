@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hotelbooking/ui/widgets/navigation_bar.dart';
 import 'package:hotelbooking/utils/constants.dart';
 
 class HotelDashboard extends StatefulWidget {
@@ -11,33 +10,9 @@ class HotelDashboard extends StatefulWidget {
 class _HotelDashboardState extends State<HotelDashboard> {
   IconData myLovelyIcon = Icons.favorite_border;
   bool favourite = false;
-  int currentIndex;
-
-  void updateIndex(int index) {
-    setState(() {
-      print(index);
-      currentIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(kLightBlue),
-        centerTitle: true,
-        title: Text('Hotelurile mele'),
-      ),
-      bottomNavigationBar:
-      NavigationBar(selectedIndex: currentIndex, onTap: updateIndex),
-      backgroundColor: Colors.white,
-      body: ListView(
-        children: getListItems(),
-      ),
-    );
-  }
-
-  List<Widget> getListItems() {
     List<Widget> widgetList = [];
     for (int i = 0; i < 12; i++) {
       widgetList.add(Padding(
@@ -142,7 +117,9 @@ class _HotelDashboardState extends State<HotelDashboard> {
         ),
       ));
     }
-    return widgetList;
+    return ListView(
+      children: widgetList,
+    );
   }
 
   Widget createDefaultStar() {
