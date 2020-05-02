@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:hotelbooking/ui/widgets/text_input.dart';
+import 'package:hotelbooking/ui/widgets/registration_text_input.dart';
 import 'package:hotelbooking/utils/constants.dart';
 import 'package:hotelbooking/ui/widgets/base_button.dart';
 import 'package:flutter/material.dart';
@@ -72,26 +72,6 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  /*
-  void login() async {
-
-    var uri = Uri.http(kBaseUri, kUserCsrfToken);
-    var req1 = await http.post(uri, )
-
-
-    var formData = {
-      'email': 'admin',
-      'password' : 'admin',
-      'csrfToken' : '29fc9e46ca19867b2c143f6d423a33657420ec8e-1587930587051-c5acd3df5902c4274f776de9'
-    };
-
-    var uri = Uri.http(kBaseUri, '$kUserUri/doLogin');
-    var request = await http.post(uri,headers: headers,body: formData);
-    print(request.body);
-    print(request.statusCode);
-  }
-   */
-
   void login() async {
     setState(() {
       showSpinner = true;
@@ -104,8 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
         setState(() {
           showSpinner = false;
         });
-        // TODO => Push Towards Hotels list
-        Navigator.pushNamed(context, kHotelsDashboard);
+        Navigator.pushNamed(context, kSearchScreen);
       } else {
         setState(() {
           showSpinner = false;

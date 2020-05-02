@@ -1,4 +1,4 @@
-import 'package:hotelbooking/ui/widgets/text_input.dart';
+import 'package:hotelbooking/ui/widgets/registration_text_input.dart';
 import 'package:hotelbooking/utils/constants.dart';
 import 'package:hotelbooking/ui/widgets/base_button.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +76,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
   }
 
+  void register() async {
+    try {
+      var uri = Uri.http(kBaseUri, '/login');
+      var response = await http
+          .post(uri , headers : {'password': 'root', 'email': 'root'});
+      print('${response.body} ${response.headers} ${response.statusCode}');
+    } catch (e) {
+      print(e);
+    }
+  }
 
+/*
   void register() async {
     try {
       setState(() {
@@ -88,12 +99,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         setState(() {
           showSpinner = false;
         });
-        Navigator.pushNamed(context, kHotelsDashboard);
+        Navigator.pushNamed(context, kSearchScreen);
+      } else {
+        setState(() {
+          showSpinner = false;
+        });
       }
     } catch (e) {
       setState(() {
         showSpinner = false;
       });
     }
-  }
+  }*/
 }

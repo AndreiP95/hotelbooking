@@ -15,7 +15,6 @@ class Room {
     return numberOfDays * price;
   }
 
-  // TODO -> Check dates ( might be remote )
   bool isAvailable(DateTime startDate, DateTime endDate) {
     while (startDate.millisecondsSinceEpoch < endDate.millisecondsSinceEpoch) {
       startDate.add(Duration(days: 1));

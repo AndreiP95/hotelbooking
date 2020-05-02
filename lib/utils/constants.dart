@@ -22,7 +22,9 @@ const String kWelcomeScreenRoute = "WELCOME_SCREEN";
 const String kRegistrationScreenRoute = "REGISTRATION_SCREEN";
 const String kLoginScreenRoute = "LOGIN_SCREEN";
 const String kHotelsDashboard = "HOTELS_DASHBOARD";
-
+const String kSearchScreen = "SEARCH_SCREEN";
+const String kDetailsScreen = "DETAILS_SCREEN";
+const String kReservationRoute = "RESERVATION_SCREEN";
 
 const String registerToBackend = 'register';
 
@@ -41,13 +43,23 @@ const kTextFieldDecoration = InputDecoration(
   ),
 );
 
+const kSearchTextFieldDecoration = InputDecoration(
+  border: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.grey, width: 4.0),
+  ),
+);
 
 const kDarkBlue = 0xFF1761a0;
 const kLightBlue = 0xFF2884d4;
 const kYellow = 0xFFe6ba0e;
 
-
-const kBaseUri = 'www.our-fun.com:9000';
+const kBaseUri = 'our-fun.com:9000';
 const kUserUri = '/users';
 const kUserLoginUri = '/login';
 const kUserCsrfToken = '/csrf';
+
+const TextStyle titleStyle =
+    TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold);
+
+const TextStyle descriptionStyle =
+    TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.normal);

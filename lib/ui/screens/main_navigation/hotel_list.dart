@@ -93,9 +93,7 @@ class _HotelDashboardState extends State<HotelDashboard> {
                       height: 6,
                     ),
                     GestureDetector(
-                      onTap: () {
-                        print('Am fost apasat');
-                      },
+                      onTap:  () {goToSelectedHotel(i);},
                       child: Container(
                         padding:
                             EdgeInsets.symmetric(vertical: 9, horizontal: 12),
@@ -135,5 +133,9 @@ class _HotelDashboardState extends State<HotelDashboard> {
       myLovelyIcon = favourite ? Icons.favorite_border : Icons.favorite;
       favourite = !favourite;
     });
+  }
+
+  void goToSelectedHotel(int index) {
+    Navigator.pushNamed(context, kDetailsScreen);
   }
 }
