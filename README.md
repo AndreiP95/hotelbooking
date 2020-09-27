@@ -1,3 +1,3 @@
-# hotelbooking
+# HotelBooking
 
 Online reservation app
